@@ -201,6 +201,12 @@ compose (BDD f) (BDDMap m) = liftM BDD $ unsafePrimToPrim $ c_compose f m
 --printDot :: PrimMonad m => BDD -> m ()
 --printDot (BDD x) = unsafePrimToPrim $ c_printDot x
 --
+
+foreign import ccall safe "sylvan_restrict_stub"
+    c_restrict :: CBDD -> CBDD -> IO CBDD
+
+restrict :: PrimMonad m => BDD -> BDD -> m BDD
+restrict (BDD f) (BDD c) = fmap BDD $ unsafePrimToPrim $ c_restrict f c
 ----TODO: a macro
 --foreign import ccall safe "sylvan_print"
 --    c_bddPrint :: CBDD -> IO ()
