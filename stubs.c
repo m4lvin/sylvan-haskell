@@ -30,7 +30,7 @@ BDD sylvan_compose_stub(BDD f, BDDMAP m){
     return sylvan_compose(f, m);
 }
 
-BDD sylvan_restrict_strub(BDD a, BDD b){
+BDD sylvan_restrict_stub(BDD a, BDD b){
     LACE_ME;
     return sylvan_restrict(a,b);
 }
