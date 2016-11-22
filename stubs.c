@@ -39,4 +39,3 @@ void sylvan_gc_stub(){
     LACE_ME;
     sylvan_gc();
 }
-
